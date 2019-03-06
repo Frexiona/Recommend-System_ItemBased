@@ -32,12 +32,12 @@ public class DeviationFromItemMeanPredictor implements Predictor
 				Double similarity = simMap.getSimilarity(itemId, id);
 				Double ratingAvg_id = itemProfileMap.get(id).getMeanValue();
 				numerator += similarity.doubleValue() * (rating.doubleValue() - ratingAvg_id.doubleValue());
-				denominator += Math.abs(similarity.doubleValue());
+				denominator += similarity.doubleValue();
 			}
 		}
 		double ratingAvg_item = itemProfileMap.get(itemId).getMeanValue();
 		
-		return denominator > 0 ? ratingAvg_item + (numerator / denominator) : 0;
+		return denominator > 0 ? ratingAvg_item + (numerator / denominator) : null;
 	}
 
 }
