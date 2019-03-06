@@ -5,8 +5,10 @@ import java.io.File;
 import alg.ib.neighbourhood.NearestNeighbourhood;
 import alg.ib.neighbourhood.Neighbourhood;
 import alg.ib.neighbourhood.ThresholdNeighbourhood;
+import alg.ib.predictor.DeviationFromItemMeanPredictor;
 import alg.ib.predictor.Predictor;
 import alg.ib.predictor.SimpleAveragePredictor;
+import alg.ib.predictor.WeightedAveragePredictor;
 import similarity.metric.CosineMetric;
 import similarity.metric.PearsonMetric;
 import similarity.metric.SimilarityMetric;
@@ -19,7 +21,7 @@ public class ExecuteIB_ML20M_2 {
 		for (float t = 0; t < 0.75; t += 0.05)
 		{
 			// configure the item-based CF algorithm - set the predictor, neighbourhood and similarity metric ...
-			Predictor predictor = new SimpleAveragePredictor();
+			Predictor predictor = new DeviationFromItemMeanPredictor();
 			Neighbourhood neighbourhood = new ThresholdNeighbourhood(t);
 			SimilarityMetric metric = new CosineMetric();
 			
