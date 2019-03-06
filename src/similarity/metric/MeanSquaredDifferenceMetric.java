@@ -30,7 +30,7 @@ public class MeanSquaredDifferenceMetric implements SimilarityMetric
 		
 		if (common.size() == 0)
 		{
-			return 0;
+			numerator = 0;
 		}
 		else numerator = numerator / common.size();
 		denominator = Math.pow(r_max - r_min, 2);
