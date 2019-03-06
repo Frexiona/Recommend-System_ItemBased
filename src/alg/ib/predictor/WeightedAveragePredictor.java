@@ -35,9 +35,9 @@ public class WeightedAveragePredictor implements Predictor
 			}
 		}
 		
-		if (denominator == 0) return (double)0;
+		// if (denominator == 0) return (double)0;
 		
-		return numerator > 0 ? numerator / denominator : 0;
+		return numerator > 0 ? numerator / denominator : null;
 	}
 	
 }
